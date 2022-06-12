@@ -24,32 +24,31 @@ The annotation files (.csv) of all datasets are in './data'. If you download the
 data
  |─ downstream
  │   |─ ucf
- │       └─ ucf101
- |           |─ label1
- |               |─ video1.mp4
- |               :
- |           :
+ │   │   └─ ucf101
+ |   │       |─ label1
+ |   │           |─ video1.mp4
+ |   │           :
+ |   │       :
  |   |─ hmdb
- |       |─ label1
- |           |─ video1.avi
- |           :
- |       :
+ |   │   |─ label1
+ |   │   │   |─ video1.avi
+ |   │   │   :
+ |   │   :
  |   |─ youcook
- |       |─ task1
- |           |─ video1.mp4
- |           :
- |       :
+ |   │   |─ task1
+ |   │   │   |─ video1.mp4
+ |   │   │   :
+ |   │   :
  |   |─ msrvtt
- |       └─ TestVideo
- |           |─ video1.mp4
- |           :
+ |   │   └─ TestVideo
+ |   │       |─ video1.mp4
+ |   │       :
  |   └─ crosstask
  |       └─ videos
  |           |─ 105222
- |               |─ 4K4PnQ66LQ8.mp4
- |               :
+ |           │   |─ 4K4PnQ66LQ8.mp4
+ |           │   :
  |           :
-
  ```
 
 ### Pretrained Weight
