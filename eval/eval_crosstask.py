@@ -2,9 +2,12 @@ import warnings
 warnings.simplefilter("ignore", UserWarning)
 import os
 import random
+import socket
 import time
 import sys
 
+root_path = os.getcwd()
+sys.path.append(root_path)
 import torch
 import torch.optim as optim
 import torch.nn.functional as F
@@ -96,7 +99,7 @@ def deploy_model(args):
     torch.cuda.set_device(args.gpu)
     model = S3D(args.num_class, space_to_depth=False, word2vec_path=args.word2vec_path)
     model.cuda(args.gpu)
-    checkpoint_module = {k:v for k,v in checkpoint.items()}
+    checkpoint_module = {k[7:]:v for k,v in checkpoint.items()}
     model.load_state_dict(checkpoint_module)
     model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], find_unused_parameters=True)
     model.eval()
@@ -108,6 +111,10 @@ def main_worker(gpu, ngpus_per_node, main, args):
     cudnn.benchmark = True
     args.gpu = gpu
     args.rank = gpu
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 80))
+    ip = s.getsockname()[0]
+    args.dist_url = f'tcp://{ip}:12345'
     dist.init_process_group(backend='nccl', init_method=args.dist_url, world_size=ngpus_per_node, rank=gpu)
     main(args)
 

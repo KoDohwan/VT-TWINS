@@ -206,7 +206,7 @@ class Sentence_Embedding(nn.Module):
 
 class S3D(nn.Module):
 
-    def __init__(self, num_classes=512, gating=True, space_to_depth=False, word2vec_path='', init='uniform', token_to_word_path='../HowTo100M/data/dict.npy'):
+    def __init__(self, num_classes=512, gating=True, space_to_depth=False, word2vec_path='', init='uniform', token_to_word_path='./data/dict.npy'):
         super(S3D, self).__init__()
         self.num_classes = num_classes
         self.gating = gating
