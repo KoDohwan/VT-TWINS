@@ -23,7 +23,7 @@ class MSRVTT_DataLoader(Dataset):
             size=224,
             crop_only=False,
             center_crop=True,
-            token_to_word_path='./data/dict.npy',
+            token_to_word_path='../data/dict.npy',
             max_words=30,
     ):
         """

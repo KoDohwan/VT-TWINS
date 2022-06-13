@@ -1,6 +1,6 @@
 # VT-TWINS
 
-This repositoriy is the implementation of "[Video Text Representation Learning via Differentiable Weak Temporal Alignment](https://openaccess.thecvf.com/content/CVPR2022/papers/Ko_Video-Text_Representation_Learning_via_Differentiable_Weak_Temporal_Alignment_CVPR_2022_paper.pdf) (CVPR 2022)".
+This repositoriy is the implementation of "[Video-Text Representation Learning via Differentiable Weak Temporal Alignment](https://openaccess.thecvf.com/content/CVPR2022/papers/Ko_Video-Text_Representation_Learning_via_Differentiable_Weak_Temporal_Alignment_CVPR_2022_paper.pdf) (CVPR 2022)".
 
 <div align="center">
   <img src="src/main.png" width="900px" />
@@ -16,7 +16,7 @@ This repositoriy is the implementation of "[Video Text Representation Learning v
 - numpy
 - tqdm
 - scikit-learn
-- numba 0.53.
+- numba 0.53.1
 
 ### Dataset
 The annotation files (.csv) of all datasets are in './data'. If you download the downstream datasets, place the files as follows:
@@ -58,32 +58,27 @@ The pretrained weight of our model, word2vec, and the tokenizer can be found in 
 
 ### Action Recognition on UCF101
 ```
-cd eval
-python eval_ucf.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
+python eval/eval_ucf.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
 ```
 
 ### Action Recognition on HMDB
 ```
-cd eval
-python eval_hmdb.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
+python eval/eval_hmdb.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
 ```
 
 ### Text-to-Video Retrieval on YouCook2
 ```
-cd eval
-python eval_youcook.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
+python eval/eval_youcook.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
 ```
 
 ### Text-to-Video Retrieval on MSRVTT
 ```
-cd eval
-python eval_msrvtt.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
+python eval/eval_msrvtt.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
 ```
 
 ### Action Step Localization on CrossTask
 ```
-cd eval
-python eval_crosstask.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
+python eval/eval_crosstask.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
 ```
 
 ## Citation
