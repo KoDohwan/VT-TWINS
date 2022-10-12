@@ -1,6 +1,6 @@
 import argparse
 
-def get_args(description='MILNCE'):
+def get_args(description='VT-TWINS'):
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument('--train_csv', type=str, default='./data/all_videos.csv', help='train csv')
     parser.add_argument('--video_path', type=str, default='./data/videos', help='video_path')

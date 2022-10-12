@@ -3,7 +3,7 @@
 This repositoriy is the implementation of "[Video-Text Representation Learning via Differentiable Weak Temporal Alignment](https://openaccess.thecvf.com/content/CVPR2022/papers/Ko_Video-Text_Representation_Learning_via_Differentiable_Weak_Temporal_Alignment_CVPR_2022_paper.pdf) (CVPR 2022)".
 
 <div align="center">
-  <img src="src/main.png" width="900px" />
+  <img src="asset/main.png" width="900px" />
 </div>
 
 ## Preparation
@@ -58,27 +58,27 @@ The pretrained weight of our model, word2vec, and the tokenizer can be found in 
 
 ### Action Recognition on UCF101
 ```
-python eval/eval_ucf.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
+python src/eval_ucf.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
 ```
 
 ### Action Recognition on HMDB
 ```
-python eval/eval_hmdb.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
+python src/eval_hmdb.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
 ```
 
 ### Text-to-Video Retrieval on YouCook2
 ```
-python eval/eval_youcook.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
+python src/eval_youcook.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
 ```
 
 ### Text-to-Video Retrieval on MSRVTT
 ```
-python eval/eval_msrvtt.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
+python src/eval_msrvtt.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
 ```
 
 ### Action Step Localization on CrossTask
 ```
-python eval/eval_crosstask.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
+python src/eval_crosstask.py --pretrain_cnn_path ./checkpoint/pretrained.pth.tar
 ```
 
 ## Citation
