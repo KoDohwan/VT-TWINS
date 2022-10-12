@@ -4,7 +4,6 @@ import os
 import random
 import time
 import glob
-import socket
 import sys
 from tqdm import tqdm
 
@@ -42,11 +41,6 @@ def main():
         random.seed(args.seed)
         torch.manual_seed(args.seed)
 
-
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.connect(("8.8.8.8", 80))
-    ip = s.getsockname()[0]
-    s.close()
     args.multiprocessing_distributed = True
     args.evaluate = False
  
@@ -61,9 +55,7 @@ def main():
 
 def main_worker(gpu, ngpus_per_node, args):
     args.gpu = gpu
-    
     if args.distributed:
-        args.dist_url = 'tcp://163.152.29.151:12345'
         dist.init_process_group(
             backend=args.dist_backend,
             init_method=args.dist_url,
